@@ -1,6 +1,5 @@
 windows.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('DOMContentLoaded', () => {
   const kissBtn = document.getElementById('kissBtn');
   const kissMsg = document.getElementById('kissMsg');
 
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1800);
     }, 1800);
   });
-});
   
 const openBtn = document.getElementById('openEnvelopeBtn');
 const envelope = document.getElementById('envelope');
@@ -411,6 +409,7 @@ document.getElementById('playGameAnchor').addEventListener('click', ()=> {
 /* Invite user to replace placeholders */
 console.log("Replace placeholders: music-placeholder.mp3, images/, videos/, and edit the letter in #letterText.");
 });
+
 
 
 
