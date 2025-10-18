@@ -294,7 +294,7 @@ document.getElementById('addNoteBtn').addEventListener('click', ()=> {
   const div = document.createElement('div');
   div.className = 'sticky';
   div.dataset.note = '';
-  div.innerHTML = '<p>Placeholder: add your message here.</p>';
+  div.innerHTML = '<p>I Loveee Youuuu!</p>';
   wrap.appendChild(div);
   // auto scroll to it
   div.scrollIntoView({behavior:'smooth',block:'center'});
@@ -375,3 +375,4 @@ document.getElementById('playGameAnchor').addEventListener('click', ()=> {
 
 /* Invite user to replace placeholders */
 console.log("Replace placeholders: music-placeholder.mp3, images/, videos/, and edit the letter in #letterText.");
+
