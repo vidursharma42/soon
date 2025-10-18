@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <title>Get well soon my PRINCESS ✨</title>
+</head>
+
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <div class="container">
+
+    <header>
+      <div class="title">
+        <div class="logo">✨</div>
+        <div>
+          <h1>For My Beautiful Girl</h1>
+          <p class="lead">Since you’re not feeling well, I made this little galaxy for you. I just wish i was there with
+            you but i can't so
+            i want us both to feel together with this little something i made with love for you. 🌙💖</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <button class="nav-btn" data-goto="welcome">Home</button>
+        <button class="nav-btn" data-goto="memories">Memories</button>
+        <button class="nav-btn" data-goto="game">Game</button>
+        <button class="nav-btn" data-goto="music">Music</button>
+        <button class="nav-btn" data-goto="notes">Notes</button>
+        <button class="nav-btn" data-goto="wishes">Wishes</button>
+        <button class="nav-btn" data-goto="ending">Ending</button>
+      </nav>
+    </header>
+
+    <!-- WELCOME -->
+    <section id="welcome" class="card welcome" data-section>
+      <div class="left">
+        <h2>Hey gorgeous — rest and smile ✨</h2>
+        <p>I made a little place of stars and cute things just for you. Click the envelope, listen to soft music, look
+          at our memories, and play a tiny game if you want to — or just relax and read the notes I wrote for you.</p>
+        <div class="cta">
+          <button class="btn" id="openEnvelopeBtn">Open Envelope</button>
+          <button class="muted-btn" id="playGameAnchor">Play a Tiny Game</button>
+        </div>
+      </div>
+
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope">
+          <div class="flap">A note for you</div>
+          <div class="body">
+            <div class="letter">
+              <div class="open-note" id="letterText">
+                <!-- Placeholder note text — replace with your own -->
+                My love,
+
+                I pray to god to make my BEAUTIFUL cutu as healthy and happy as she is always because i just can't
+                see her
+                like this. When she is like this a part of me dies watching her in pain, just know that i am always here
+                for you my
+                SWEETU - Bestfriend, Girlfriend and obviously my GYM BUDDY!!! 💞
+
+                Love,
+                Vidur 💫
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMORIES -->
+    <section id="memories" class="card" data-section>
+      <h3 style="font-family:'Dancing Script';font-size:22px;margin-top:0">Our Memories ✨</h3>
+      <p style="margin-top:6px;margin-bottom:12px;opacity:0.9">Click any photo/video to view.</p>
+
+      <div class="gallery-grid" id="gallery">
+        <!-- Replace these placeholders with your own images/videos -->
+        <div class="thumb" data-src="images/1.jpg" data-type="img" data-caption="Your birthday!!">
+          <img src="images/1.jpg" alt="photo 1">
+          <div class="caption">Your birthday!!</div>
+        </div>
+
+        <div class="thumb" data-src="videos/video.mp4" data-type="video" data-caption="Favourite video!">
+          <video muted playsinline src="videos/video.mp4"></video>
+          <div class="caption">Favourite video!</div>
+        </div>
+
+        <div class="thumb" data-src="images/2.jpg" data-type="img" data-caption="Us!!">
+          <img src="images/2.jpg" alt="photo 2">
+          <div class="caption">Us!!</div>
+        </div>
+
+        <div class="thumb" data-src="images/3.jpg" data-type="img" data-caption="Gym Buddies Us!">
+          <img src="images/3.jpg" alt="photo 3">
+          <div class="caption">Gym Buddies Us!</div>
+        </div>
+      </div>
+
+      <div class="modal" id="mediaModal" aria-hidden="true">
+        <div class="content">
+          <button class="close" id="closeModal">Close ✕</button>
+          <div id="modalInner" style="min-height:320px;display:flex;align-items:center;justify-content:center"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game" class="card" data-section>
+      <h3 style="font-family:'Dancing Script';font-size:22px;margin-top:0">Catch My Love 🎯</h3>
+      <p style="margin-bottom:12px">Catch falling hearts and earn a little message when you win!</p>
+
+      <div id="gameArea">
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-ui" id="gameUI">
+          Score: <span id="score">0</span>
+          <button id="startGameBtn">Start</button>
+          <button id="resetGameBtn">Reset</button>
+        </div>
+      </div>
+
+      <div id="gameWinMsg" style="margin-top:8px;display:none;font-weight:700;color:var(--accent2)"></div>
+    </section>
+
+    <!-- MUSIC -->
+    <section id="music" class="card" data-section>
+      <h3 style="font-family:'Dancing Script';font-size:22px;margin-top:0">Music 🎶</h3>
+      <p style="margin-bottom:12px"></p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <div style="flex:1;min-width:240px">
+          <p style="margin:0 0 8px 0">Current track: <strong id="currentTrack">Be my babyy!!!</strong></p>
+          <div style="display:flex;gap:8px">
+            <button class="nav-btn" id="playPauseAudio">Play/Pause</button>
+            <label style="align-items:center;display:flex;gap:6px;">
+              <input type="range" id="volume" min="0" max="1" step="0.01" value="0.6">
+              <small style="opacity:0.9">Volume</small>
+            </label>
+          </div>
+        </div>
+
+        <div style="min-width:200px">
+          <p style="margin:0 0 6px 0"></p>
+          <ul style="margin:0;padding-left:18px;opacity:0.95">
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes" class="card" data-section>
+      <h3 style="font-family:'Dancing Script';font-size:22px;margin-top:0">Things I Love About You 💌</h3>
+      <p style="margin-top:6px;margin-bottom:12px">Click each note to make it fall like a petal</p>
+
+      <div class="notes-wrap" id="notesWrap">
+        <div class="sticky" data-note>
+          <p>How your laugh lights up my day.</p>
+        </div>
+        <div class="sticky" data-note>
+          <p>Your Chaku! (yes, even that).</p>
+        </div>
+        <div class="sticky" data-note>
+          <p>Coffee specialist.</p>
+        </div>
+        <div class="sticky" data-note>
+          <p>How you always remember small things.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn" id="addNoteBtn">Add a Note!</button>
+      </div>
+    </section>
+
+    <!-- WISHES -->
+    <section id="wishes" class="card" data-section>
+      <h3 style="font-family:'Dancing Script';font-size:22px;margin-top:0">Little Wishes ✨</h3>
+      <p style="margin-bottom:12px">A few wishes floating across the galaxy just for you.</p>
+
+      <div class="wishes" id="wishesArea" style="height:140px">
+        <!-- JS will place wishes -->
+      </div>
+    </section>
+
+    <!-- ENDING -->
+    <section id="ending" class="card" data-section>
+      <div class="ending">
+        <div>
+          <h3 style="font-family:'Dancing Script';font-size:22px;margin-top:0">Always With You 🌙</h3>
+          <p>Click the heart for a kiss 😘</p>
+          <div style="margin-top:10px">
+            <button class="btn" id="kissBtn">Give a kiss 💋</button>
+          </div>
+        </div>
+
+        <div class="star-constellation card" id="constellation" style="width:260px;height:160px"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" src="music/bg.mp3" loop preload="auto"></audio>
+
+  <!-- audio toggle UI (shows if autoplay blocked) -->
+  <div class="audio-toggle" id="audioToggle" style="display:none">
+    <div style="font-weight:700">Music</div>
+    <button id="audioOnBtn">Turn On</button>
+    <button id="audioOffBtn">Turn Off</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
