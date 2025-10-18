@@ -202,7 +202,7 @@ function animateGame(){
         for(let s=0;s<5;s++){
           // ignored transient particles for simplicity
         }
-        if(score >= 8){
+        if(score >= 15){
           // win
           endGameWin();
           return;
@@ -375,4 +375,5 @@ document.getElementById('playGameAnchor').addEventListener('click', ()=> {
 
 /* Invite user to replace placeholders */
 console.log("Replace placeholders: music-placeholder.mp3, images/, videos/, and edit the letter in #letterText.");
+
 
