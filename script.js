@@ -1,3 +1,4 @@
+windows.addEventListener('DOMContentLoaded', () => {
 /* -------------------- Starfield Background -------------------- */
 const starCanvas = document.getElementById('starfield');
 const sc = starCanvas.getContext('2d');
@@ -375,5 +376,6 @@ document.getElementById('playGameAnchor').addEventListener('click', ()=> {
 
 /* Invite user to replace placeholders */
 console.log("Replace placeholders: music-placeholder.mp3, images/, videos/, and edit the letter in #letterText.");
+});
 
 
