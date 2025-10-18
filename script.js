@@ -1,4 +1,17 @@
-windows.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+const openBtn = document.getElementById('openEnvelopeBtn');
+const envelope = document.getElementById('envelope');
+
+openBtn.addEventListener('click', () => {
+  envelope.classList.toggle('open');
+
+  // only try to play music if opening
+  if(envelope.classList.contains('open')) {
+    tryPlayMusic();
+  }
+});
+  
 /* -------------------- Starfield Background -------------------- */
 const starCanvas = document.getElementById('starfield');
 const sc = starCanvas.getContext('2d');
@@ -377,5 +390,6 @@ document.getElementById('playGameAnchor').addEventListener('click', ()=> {
 /* Invite user to replace placeholders */
 console.log("Replace placeholders: music-placeholder.mp3, images/, videos/, and edit the letter in #letterText.");
 });
+
 
 
