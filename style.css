@@ -82,7 +82,10 @@
   .envlope .letter{
     width:86%;height:86%;background:linear-gradient(180deg,#fff,#fffdf6);border-radius:8px;padding:12px;color:#111;box-shadow:0 6px 18px rgba(0,0,0,0.08);
     transform:translateY(12px);transition:transform .8s cubic-bezier(.2,.9,.15,1);
+    overflow-y: auto; max-height:100%; word-break: break-word;
   }
+  .envelope .letter::-webkit-scrollbar {width: 5px;}
+  .envelope .letter::-webkit-scrollbar-thumb {background: rgba(0,0,0,0.15); border-radius: 2px;}
   .envelope.open .letter{transform:translateY(-46px) rotateZ(-1deg)}
   .open-note{font-size:14px;line-height:1.4;white-space:pre-wrap}
 
@@ -141,4 +144,5 @@
     .envelope .flap{height:50px;font-size:14px;}
     .envelope .letter{width:75%;height:75%;padding:6px;font-size:12px;}
   }
+
 
